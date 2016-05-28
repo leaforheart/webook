@@ -7,6 +7,6 @@ public class ConnectionBuilderException extends Exception {
 		super("Connection获取失败，原因是DataSource创建失败，数据源名称："+dataSourceName+",数据源名称配置文件路径为："+dataSourceNameConfigPath);
 	}
 	public ConnectionBuilderException(String e) {
-		super("Connection获取失败，原因是发生了SQLException，即数据库连接错误:"+e);
+		super("Connection获取失败，原因是发生了SQLException，即数据库连接错误，请检查连接参数是否正确:"+e);
 	}
 }
