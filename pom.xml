@@ -17,6 +17,7 @@
     <dbutils.version>1.6</dbutils.version>
     <postgresql.version>9.4.1208.jre7</postgresql.version>
     <ehcache.version>3.0.1</ehcache.version>
+    <webook.util.version>0.0.1-SNAPSHOT</webook.util.version>
   </properties>
 
   <dependencies>
@@ -45,6 +46,11 @@
 	    <groupId>org.ehcache</groupId>
 	    <artifactId>ehcache</artifactId>
 	    <version>${ehcache.version}</version>
+	</dependency>
+	<dependency>
+	    <groupId>com.leaforbook</groupId>
+	    <artifactId>webook-util</artifactId>
+	    <version>${webook.util.version}</version>
 	</dependency>
   </dependencies>
 </project>
