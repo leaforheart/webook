@@ -43,11 +43,6 @@
 	    <version>${postgresql.version}</version>
 	</dependency>
 	<dependency>
-	    <groupId>org.ehcache</groupId>
-	    <artifactId>ehcache</artifactId>
-	    <version>${ehcache.version}</version>
-	</dependency>
-	<dependency>
 	    <groupId>com.leaforbook</groupId>
 	    <artifactId>webook-util</artifactId>
 	    <version>${webook.util.version}</version>
