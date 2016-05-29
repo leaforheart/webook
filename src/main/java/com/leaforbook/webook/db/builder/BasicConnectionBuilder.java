@@ -9,8 +9,8 @@ import com.leaforbook.webook.db.exception.DataSourceCreateException;
 
 public class BasicConnectionBuilder extends ConnectionBuilder {
 	
-	private String defaultDataSourceNameConfigPath;
-	private String defaultDataSourceName;
+	protected String defaultDataSourceNameConfigPath;
+	protected String defaultDataSourceName;
 
 	@Override
 	protected void setDefaultDataSourceNameConfigPath() {
