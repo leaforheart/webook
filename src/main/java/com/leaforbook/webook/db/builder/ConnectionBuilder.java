@@ -4,10 +4,14 @@ import java.sql.Connection;
 
 import com.leaforbook.webook.db.exception.ConnectionBuilderException;
 
-public interface ConnectionBuilder {
-	void setDefaultDataSourceNameConfigPath();
-	void setDefaultDataSourceName();
-	Connection getConnection() throws ConnectionBuilderException;
-	Connection getConnection(String dataSourceName) throws ConnectionBuilderException;
-	Connection getConnection(String dataSourceName,String dataSourceNameConfigPath) throws ConnectionBuilderException;
+public abstract class ConnectionBuilder {
+	public ConnectionBuilder() {
+		setDefaultDataSourceNameConfigPath();
+		setDefaultDataSourceName();
+	}
+	protected abstract void setDefaultDataSourceNameConfigPath();
+	protected abstract void setDefaultDataSourceName();
+	public abstract Connection getConnection() throws ConnectionBuilderException;
+	public abstract Connection getConnection(String dataSourceName) throws ConnectionBuilderException;
+	public abstract Connection getConnection(String dataSourceName,String dataSourceNameConfigPath) throws ConnectionBuilderException;
 }

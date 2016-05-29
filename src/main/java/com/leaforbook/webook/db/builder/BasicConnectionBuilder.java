@@ -7,23 +7,18 @@ import com.leaforbook.webook.db.constant.DataSourceConstants;
 import com.leaforbook.webook.db.exception.ConnectionBuilderException;
 import com.leaforbook.webook.db.exception.DataSourceCreateException;
 
-public class BasicConnectionBuilder implements ConnectionBuilder {
+public class BasicConnectionBuilder extends ConnectionBuilder {
 	
 	private String defaultDataSourceNameConfigPath;
 	private String defaultDataSourceName;
-	
-	public BasicConnectionBuilder() {
-		setDefaultDataSourceNameConfigPath();
-		setDefaultDataSourceName();
-	}
 
 	@Override
-	public void setDefaultDataSourceNameConfigPath() {
+	protected void setDefaultDataSourceNameConfigPath() {
 		defaultDataSourceNameConfigPath = DataSourceConstants.DEFAULT_DATASOURCENAME_CONFIGPATH;
 	}
 
 	@Override
-	public void setDefaultDataSourceName() {
+	protected void setDefaultDataSourceName() {
 		defaultDataSourceName = DataSourceConstants.DEFAULT;
 	}
 
