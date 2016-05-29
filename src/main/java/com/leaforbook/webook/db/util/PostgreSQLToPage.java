@@ -7,7 +7,7 @@ public class PostgreSQLToPage {
 		sql = sql.trim();
 		int select = sql.indexOf("select");
 		int from = sql.indexOf("from");
-		if(select!=0||from<10) {
+		if(select!=0||from<9) {
 			throw new SQLToPageException(sql);
 		}
 		if(sql.lastIndexOf(";")==sql.length()-1) {

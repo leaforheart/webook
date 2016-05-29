@@ -7,10 +7,10 @@ public class PostgreSQLToCount {
 		sql = sql.trim();
 		int select = sql.indexOf("select");
 		int from = sql.indexOf("from");
-		if(select!=0||from<10) {
+		if(select!=0||from<9) {
 			throw new SQLToCountException(sql);
 		}
-		sql = sql.substring(0, 5) + " count(1) count " + sql.substring(from);
+		sql = sql.substring(0, 6) + " count(1) count " + sql.substring(from);
 		return sql;
 	}
 }

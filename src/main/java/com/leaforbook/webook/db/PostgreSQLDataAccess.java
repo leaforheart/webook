@@ -2,6 +2,7 @@ package com.leaforbook.webook.db;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.commons.dbutils.ResultSetHandler;
@@ -102,9 +103,11 @@ public class PostgreSQLDataAccess extends DataAccess {
 		try {
 			String finalSql = this.getSqlChecker().check(sql);
 			finalSql = PostgreSQLToPage.convert(finalSql);
-			params.add(limit);
-			params.add(offset);
-			Object[] arrParams = ListToArray.oneDimensional(params);
+			List<Object> pageParams = new ArrayList<Object>();
+			pageParams.addAll(params);
+			pageParams.add(limit);
+			pageParams.add(offset);
+			Object[] arrParams = ListToArray.oneDimensional(pageParams);
 			result = this.getQueryRuner().query(conn, finalSql, rsh,arrParams);
 		} catch (SQLCheckException e) {
 			throw new DataAccessException(SQLConstants.METHOD_QUERYPAGE,sql);
