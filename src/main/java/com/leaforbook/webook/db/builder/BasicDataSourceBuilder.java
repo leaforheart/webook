@@ -9,9 +9,9 @@ import com.leaforbook.webook.db.constant.DBCPConstants;
 import com.leaforbook.webook.db.exception.DataSourceCreateException;
 import com.leaforbook.webook.util.PropertiesReader;
 
-public class BasicDataSourceFactory extends DataSourceFactory {
+public class BasicDataSourceBuilder extends DataSourceBuilder {
 
-	public BasicDataSourceFactory(String dataSourceName,String dataSourceNameConfigPath) {
+	public BasicDataSourceBuilder(String dataSourceName,String dataSourceNameConfigPath) {
 		super(dataSourceName, dataSourceNameConfigPath);
 	}
 

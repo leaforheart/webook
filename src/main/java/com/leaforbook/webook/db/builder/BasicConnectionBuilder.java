@@ -29,7 +29,7 @@ public class BasicConnectionBuilder implements ConnectionBuilder {
 
 	@Override
 	public Connection getConnection() throws ConnectionBuilderException {
-		DataSourceFactory factory = new BasicDataSourceFactory(defaultDataSourceName,defaultDataSourceNameConfigPath);
+		DataSourceBuilder factory = new BasicDataSourceBuilder(defaultDataSourceName,defaultDataSourceNameConfigPath);
 		Connection connection = null;
 		try {
 			connection = factory.getDataSource().getConnection();
@@ -43,7 +43,7 @@ public class BasicConnectionBuilder implements ConnectionBuilder {
 
 	@Override
 	public Connection getConnection(String dataSourceName) throws ConnectionBuilderException {
-		DataSourceFactory factory = new BasicDataSourceFactory(dataSourceName,defaultDataSourceNameConfigPath);
+		DataSourceBuilder factory = new BasicDataSourceBuilder(dataSourceName,defaultDataSourceNameConfigPath);
 		Connection connection = null;
 		try {
 			connection = factory.getDataSource().getConnection();
@@ -57,7 +57,7 @@ public class BasicConnectionBuilder implements ConnectionBuilder {
 
 	@Override
 	public Connection getConnection(String dataSourceName,String dataSourceNameConfigPath) throws ConnectionBuilderException {
-		DataSourceFactory factory = new BasicDataSourceFactory(dataSourceName,dataSourceNameConfigPath);
+		DataSourceBuilder factory = new BasicDataSourceBuilder(dataSourceName,dataSourceNameConfigPath);
 		Connection connection = null;
 		try {
 			connection = factory.getDataSource().getConnection();

@@ -6,9 +6,9 @@ import javax.sql.DataSource;
 
 public class DataSourceContainer {
 	
-	private static DataSourceContainer container = new DataSourceContainer();
+	private volatile static DataSourceContainer container = new DataSourceContainer();
 	
-	private Map<String,DataSource> map = new HashMap<String,DataSource>();
+	private volatile Map<String,DataSource> map = new HashMap<String,DataSource>();
 	
 	public Map<String, DataSource> getMap() {
 		return map;
@@ -17,9 +17,6 @@ public class DataSourceContainer {
 	private DataSourceContainer() {}
 	
 	public static DataSourceContainer getInstance() {
-		if(container==null) {
-			container = new DataSourceContainer();
-		}
 		return container;
 	}
 	
