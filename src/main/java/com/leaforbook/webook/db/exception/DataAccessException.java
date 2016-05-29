@@ -10,5 +10,8 @@ public class DataAccessException extends Exception {
 	public DataAccessException(String methodName) {
 		super("访问"+methodName+"方法时发生SQLException异常");
 	}
+	public DataAccessException(String methodName,String sql,boolean isPage) {
+		super("访问"+methodName+"方法时发生错误，原因可能是该SQL不是合法的查询语句");
+	}
 
 }
