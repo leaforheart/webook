@@ -20,12 +20,11 @@ public class DataAccessTest {
 		String sql="select * from test where name like ?";
 		List<Object> params = new ArrayList<Object>();
 		params.add("%leaforbook%");
+		long i = access.queryCount(conn, sql, CountBean.class,params);
+		System.out.println(i);
 		List<TestBean> list = access.queryPage(conn, sql, 3, 0, TestBean.class,params);
 		System.out.println(list);
-		List<Object> params1 = new ArrayList<Object>();
-		params1.add("%leaforbook%");
-		int i = access.queryCount(conn, sql, CountBean.class,params1);
-		System.out.println(i);
+		
 
 		//conn.commit();
 		//conn.close();

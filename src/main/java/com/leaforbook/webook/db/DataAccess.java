@@ -186,9 +186,9 @@ public abstract class DataAccess {
 		return result;
 	}
 	
-	public abstract int queryCount(Connection conn, String sql, Class<CountBean> count) throws DataAccessException;
+	public abstract long queryCount(Connection conn, String sql, Class<CountBean> count) throws DataAccessException;
 	
-	public abstract int queryCount(Connection conn, String sql, Class<CountBean> count, List<Object> params) throws DataAccessException;
+	public abstract long queryCount(Connection conn, String sql, Class<CountBean> count, List<Object> params) throws DataAccessException;
 	
 	public abstract <T> List<T> queryPage(Connection conn, String sql,long limit,long offset,Class<T> T) throws DataAccessException;
 	

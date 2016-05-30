@@ -31,10 +31,10 @@ public class PostgreSQLDataAccess extends DataAccess {
 	}
 
 	@Override
-	public int queryCount(Connection conn, String sql, Class<CountBean> count) throws DataAccessException {
+	public long queryCount(Connection conn, String sql, Class<CountBean> count) throws DataAccessException {
 		ResultSetHandler<CountBean> rsh = new BeanHandler<CountBean>(count);
 		CountBean result = null;
-		int coun = 0;
+		long coun = 0;
 		try {
 			sql = this.getSqlChecker().check(sql);
 			sql = PostgreSQLToCount.convert(sql);
@@ -53,10 +53,10 @@ public class PostgreSQLDataAccess extends DataAccess {
 	}
 
 	@Override
-	public int queryCount(Connection conn, String sql, Class<CountBean> count,List<Object> params) throws DataAccessException {
+	public long queryCount(Connection conn, String sql, Class<CountBean> count,List<Object> params) throws DataAccessException {
 		ResultSetHandler<CountBean> rsh = new BeanHandler<CountBean>(count);
 		CountBean result = null;
-		int coun = 0;
+		long coun = 0;
 		try {
 			sql = this.getSqlChecker().check(sql);
 			sql = PostgreSQLToCount.convert(sql);
