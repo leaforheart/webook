@@ -206,9 +206,9 @@ public abstract class BasicSwapper implements Swapper {
 	}
 
 	@Override
-	public abstract <T> List<T> queryPage(String sql, long limit, long offset, Class<T> T) throws WdbException;
+	public abstract <T> List<T> queryPage(String sql, long limit, long page, Class<T> T) throws WdbException;
 
 	@Override
-	public abstract <T> List<T> queryPage(String sql, long limit, long offset,Class<T> T, List<Object> params) throws WdbException;
+	public abstract <T> List<T> queryPage(String sql, long limit, long page,Class<T> T, List<Object> params) throws WdbException;
 
 }

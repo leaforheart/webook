@@ -17,8 +17,8 @@ public interface Swapper {
 	<T> T queryUnique(String sql, Class<T> T, List<Object> params) throws WdbException;
 	long queryCount(String sql) throws WdbException;
 	long queryCount(String sql,List<Object> params) throws WdbException;
-	<T> List<T> queryPage(String sql,long limit,long offset,Class<T> T) throws WdbException;
-	<T> List<T> queryPage(String sql,long limit,long offset,Class<T> T, List<Object> params) throws WdbException;
+	<T> List<T> queryPage(String sql,long limit,long page,Class<T> T) throws WdbException;
+	<T> List<T> queryPage(String sql,long limit,long page,Class<T> T, List<Object> params) throws WdbException;
 	
 	void setPool(ConnectionPool pool);
 }
