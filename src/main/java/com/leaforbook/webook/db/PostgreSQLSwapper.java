@@ -14,16 +14,37 @@ import com.leaforbook.webook.db.exception.WdbException;
 import com.leaforbook.webook.db.util.PostgreSQLToPage;
 import com.leaforbook.webook.util.ListToArray;
 
+/**
+ * 针对PostgreSQL，对Swapper接口的特定实现。
+ * @author xiaoyilin
+ *
+ */
 public class PostgreSQLSwapper extends BasicSwapper implements Swapper {
 	
+	/**
+	 * 无参构造器
+	 */
 	public PostgreSQLSwapper() {
 		
 	}
 	
+	/**
+	 * 设置连接池的构造器
+	 * @param pool
+	 */
 	public PostgreSQLSwapper(ConnectionPool pool) {
 		this.setPool(pool);
 	}
 
+	/**
+	 * 分页查询，无参数
+	 * @param sql
+	 * @param limit 一页多少条数据
+	 * @param page 第几页
+	 * @param T
+	 * @return
+	 * @throws WdbException
+	 */
 	@Override
 	public <T> List<T> queryPage(String sql, long limit, long page, Class<T> T) throws WdbException {
 		if(!Pattern.matches("^[1-9]\\d*$", String.valueOf(limit))||!Pattern.matches("^[1-9]\\d*$",String.valueOf(page))) {
@@ -45,6 +66,15 @@ public class PostgreSQLSwapper extends BasicSwapper implements Swapper {
 		return result;
 	}
 
+	/**
+	 * 分页查询，带参数
+	 * @param sql
+	 * @param limit 一页多少条数据
+	 * @param page 第几页
+	 * @param T
+	 * @return
+	 * @throws WdbException
+	 */
 	@Override
 	public <T> List<T> queryPage(String sql, long limit, long page, Class<T> T, List<Object> params)  throws WdbException{
 		if(!Pattern.matches("^[1-9]\\d*$", String.valueOf(limit))||!Pattern.matches("^[1-9]\\d*$",String.valueOf(page))) {

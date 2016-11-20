@@ -14,6 +14,11 @@ import com.leaforbook.webook.db.exception.LoadDbConfigFileException;
 import com.leaforbook.webook.util.PropertiesReader;
 import com.leaforbook.webook.util.exception.LoadPropertiesFileException;
 
+/**
+ * 数据源构造器
+ * @author xiaoyilin
+ *
+ */
 public class DataSourceBuilder {
 	
 	/**

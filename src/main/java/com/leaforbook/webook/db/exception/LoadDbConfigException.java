@@ -1,5 +1,10 @@
 package com.leaforbook.webook.db.exception;
 
+/**
+ * 由于数据库配置文件引起的异常
+ * @author xiaoyilin
+ *
+ */
 public class LoadDbConfigException extends WdbException {
 	private static final long serialVersionUID = 2918279596816088007L;
 	
