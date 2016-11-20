@@ -13,7 +13,7 @@ import com.alibaba.fastjson.JSON;
 import com.leaforbook.webook.db.bean.CountBean;
 import com.leaforbook.webook.db.builder.QueryRunnerBuilder;
 import com.leaforbook.webook.db.exception.WdbException;
-import com.leaforbook.webook.db.util.PostgreSQLToCount;
+import com.leaforbook.webook.db.util.SQLToCount;
 import com.leaforbook.webook.util.ListToArray;
 
 public abstract class BasicSwapper implements Swapper {
@@ -175,7 +175,7 @@ public abstract class BasicSwapper implements Swapper {
 		CountBean result = null;
 		long count = 0;
 		try {
-			sql = PostgreSQLToCount.convert(sql);
+			sql = SQLToCount.convert(sql);
 			result = this.getQueryRuner().query(conn, sql, rsh);
 		} catch (SQLException e) {
 			throw new WdbException(sql,e);
@@ -193,7 +193,7 @@ public abstract class BasicSwapper implements Swapper {
 		CountBean result = null;
 		long count = 0;
 		try {
-			sql = PostgreSQLToCount.convert(sql);
+			sql = SQLToCount.convert(sql);
 			Object[] arrParams = ListToArray.oneDimensional(params);
 			result = this.getQueryRuner().query(conn, sql, rsh,arrParams);
 		}catch (SQLException e) {
