@@ -4,7 +4,7 @@ import org.apache.commons.dbutils.QueryRunner;
 
 public class QueryRunnerBuilder {
 	private static QueryRunnerBuilder builder = new QueryRunnerBuilder();
-	private QueryRunner queryRunner = new QueryRunner();
+	private static QueryRunner queryRunner = new QueryRunner();
 	
 	private QueryRunnerBuilder(){}
 	
