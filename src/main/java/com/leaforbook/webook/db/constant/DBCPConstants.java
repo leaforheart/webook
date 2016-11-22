@@ -1,5 +1,10 @@
 package com.leaforbook.webook.db.constant;
 
+/**
+ * DBCP相关配置项，详情可以查看DBCP官方文档
+ * @author xiaoyilin
+ *
+ */
 public interface DBCPConstants {
 	String DRIVERCLASSNAME = "jdbc.driverClassName";
 	String URL = "jdbc.url";

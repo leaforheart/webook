@@ -1,19 +1,19 @@
 package com.leaforbook.webook.db.util;
 
-import com.leaforbook.webook.db.exception.SQLToPageException;
-
+/**
+ * PostgreSQL把普通查询SQL转化成分页查询SQL
+ * @author xiaoyilin
+ *
+ */
 public class PostgreSQLToPage {
-	public static String convert(String sql) throws SQLToPageException {
-		sql = sql.trim();
-		int select = sql.indexOf("select");
-		int from = sql.indexOf("from");
-		if(select!=0||from<9) {
-			throw new SQLToPageException(sql);
-		}
-		if(sql.lastIndexOf(";")==sql.length()-1) {
-			sql = sql.substring(0, sql.length()-2);
-		}
-		sql += " limit ? offset ?";
+	
+	/**
+	 * 把普通查询SQL转化成分页查询SQL
+	 * @param sql
+	 * @return
+	 */
+	public static String convert(String sql) {
+		sql = "select * from (" + sql + ") sub" + " limit ? offset ?";
 		return sql;
 	}
 }
